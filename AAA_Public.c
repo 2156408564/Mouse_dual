@@ -1254,7 +1254,7 @@ u8 Draw_a_square_test(void)
 {
     _attribute_data_retention_user static int x = 0;
     _attribute_data_retention_user static u8 flag = 0;
-    int step = 20; // 步长设置为正方形的边长
+    int step = 10; // 步长设置为正方形的边长
 
     if (auto_draw_flag == 0)
     {

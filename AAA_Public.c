@@ -1305,7 +1305,13 @@ u8 get_ble_data_report_aaa(void)
 #if TEST_DRAW_A_SQUARE
         if ((blc_ll_getCurrentState() == BLS_LINK_STATE_CONN) && ((ble_status_aaa == T5S_CONNECTED_STATUS_AAA)))
         {
+        		static a = 0;
+				static b = 0;
+				a = Draw_a_square_test();
+				printf("a=%d\r\n",a);
             has_new_key_event |= Draw_a_square_test();
+				b = has_new_key_event;
+				printf("b=%d\r\n",b);
         }
 #endif
 

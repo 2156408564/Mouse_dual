@@ -52,7 +52,7 @@
     //-----------------------product function referance---------------------------------------
     //----------------------for debug--------------
     
-    #define UART_PRINT_DEBUG_ENABLE 	0//not support
+    #define UART_PRINT_DEBUG_ENABLE 	1//not support
         
     #if UART_PRINT_DEBUG_ENABLE
         #define PRINT_BAUD_RATE     1000000

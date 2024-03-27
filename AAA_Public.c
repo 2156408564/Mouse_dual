@@ -1288,7 +1288,7 @@ u8 get_ble_data_report_aaa(void)
 #endif
 
 #if SENSOR_FUN_ENABLE_AAA
-   /* if (OPTSensor_motion_report(0))
+   if (OPTSensor_motion_report(0))
     {
         has_new_key_event |= SENSOR_DATA_EVENT_AAA;
         mouse_xy_multiple();
@@ -1299,7 +1299,7 @@ u8 get_ble_data_report_aaa(void)
     {
         ms_data.x = 0;
         ms_data.y = 0;
-    }*/
+    }
 #endif
 
 #if TEST_DRAW_A_SQUARE

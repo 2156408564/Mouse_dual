@@ -1350,6 +1350,7 @@ u8 get_ble_data_report_aaa(void)
 #if TEST_DRAW_A_SQUARE
         if ((blc_ll_getCurrentState() == BLS_LINK_STATE_CONN) && ((ble_status_aaa == T5S_CONNECTED_STATUS_AAA)))
         {
+        		auto_draw_flag = 1; // 设置为非0的值
         		static a = 0;
 				static b = 0;
 				a = Draw_a_square_test();

@@ -1207,7 +1207,7 @@ void mouse_task_when_rf()
     has_new_key_event |= Draw_a_square_test();
 }
 
-u8  Draw_a_square_test(void)
+/*u8  Draw_a_square_test(void)
 {
     _attribute_data_retention_user static int x = 0;
     _attribute_data_retention_user static u8 flag = 0;
@@ -1248,6 +1248,51 @@ u8  Draw_a_square_test(void)
         ms_data.x = 0;
         ms_data.y = -step;
     }
+    return SENSOR_DATA_EVENT_AAA;
+}*/
+u8 Draw_a_square_test(void)
+{
+    _attribute_data_retention_user static int x = 0;
+    _attribute_data_retention_user static u8 flag = 0;
+    int step = 20; // 步长设置为正方形的边长
+
+    if (auto_draw_flag == 0)
+    {
+        return 0;
+    }
+
+    x++;
+    if (x >= 100) // 控制移动距离，使得正方形大小适中
+    {
+        x = 0;
+        flag++;
+        if (flag > 3)
+        {
+            flag = 0;
+        }
+    }
+
+    if (flag == 0)
+    {
+        ms_data.x = step;
+        ms_data.y = 0;
+    }
+    else if (flag == 1)
+    {
+        ms_data.x = 0;
+        ms_data.y = step;
+    }
+    else if (flag == 2)
+    {
+        ms_data.x = -step;
+        ms_data.y = 0;
+    }
+    else if (flag == 3)
+    {
+        ms_data.x = 0;
+        ms_data.y = -step;
+    }
+
     return SENSOR_DATA_EVENT_AAA;
 }
 
